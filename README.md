@@ -24,15 +24,15 @@ From basic to advanced: test how well you know JavaScript, refresh your knowledg
 function sayHi() {
   console.log(name);
   console.log(age);
-  var name = "Lydia";
+  var name = "John";
   let age = 21;
 }
 
 sayHi();
 ```
 
-- A: `Lydia` and `undefined`
-- B: `Lydia` and `ReferenceError`
+- A: `John` and `undefined`
+- B: `John` and `ReferenceError`
 - C: `ReferenceError` and `21`
 - D: `undefined` and `ReferenceError`
 
@@ -120,7 +120,7 @@ Since there is no value `radius` in the scope of the arrow function, `this.radiu
 
 ```javascript
 +true;
-!"Lydia";
+!"John";
 ```
 
 - A: `1` and `false`
@@ -134,7 +134,7 @@ Since there is no value `radius` in the scope of the arrow function, `this.radiu
 
 The unary plus tries to convert an operand to a number. `true` is `1`, and `false` is `0`.
 
-The string `'Lydia'` is a truthy value. What we're actually asking, is "Is this truthy value falsy?". This returns `false`.
+The string `'John'` is a truthy value. What we're actually asking, is "Is this truthy value falsy?". This returns `false`.
 
 </p>
 </details>
@@ -348,7 +348,7 @@ function Person(firstName, lastName) {
   this.lastName = lastName;
 }
 
-const member = new Person("Lydia", "Hallie");
+const member = new Person("John", "Hallie");
 Person.getFullName = function () {
   return `${this.firstName} ${this.lastName}`;
 };
@@ -358,7 +358,7 @@ console.log(member.getFullName());
 
 - A: `TypeError`
 - B: `SyntaxError`
-- C: `Lydia Hallie`
+- C: `John Hallie`
 - D: `undefined` `undefined`
 
 <details><summary><b>Answer</b></summary>
@@ -389,17 +389,17 @@ function Person(firstName, lastName) {
   this.lastName = lastName;
 }
 
-const lydia = new Person("Lydia", "Hallie");
+const John = new Person("John", "Hallie");
 const sarah = Person("Sarah", "Smith");
 
-console.log(lydia);
+console.log(John);
 console.log(sarah);
 ```
 
-- A: `Person {firstName: "Lydia", lastName: "Hallie"}` and `undefined`
-- B: `Person {firstName: "Lydia", lastName: "Hallie"}` and `Person {firstName: "Sarah", lastName: "Smith"}`
-- C: `Person {firstName: "Lydia", lastName: "Hallie"}` and `{}`
-- D: `Person {firstName: "Lydia", lastName: "Hallie"}` and `ReferenceError`
+- A: `Person {firstName: "John", lastName: "Hallie"}` and `undefined`
+- B: `Person {firstName: "John", lastName: "Hallie"}` and `Person {firstName: "Sarah", lastName: "Smith"}`
+- C: `Person {firstName: "John", lastName: "Hallie"}` and `{}`
+- D: `Person {firstName: "John", lastName: "Hallie"}` and `ReferenceError`
 
 <details><summary><b>Answer</b></summary>
 <p>
@@ -527,15 +527,15 @@ function getPersonInfo(one, two, three) {
   console.log(three);
 }
 
-const person = "Lydia";
+const person = "John";
 const age = 21;
 
 getPersonInfo`${person} is ${age} years old`;
 ```
 
-- A: `"Lydia"` `21` `["", " is ", " years old"]`
-- B: `["", " is ", " years old"]` `"Lydia"` `21`
-- C: `"Lydia"` `["", " is ", " years old"]` `21`
+- A: `"John"` `21` `["", " is ", " years old"]`
+- B: `["", " is ", " years old"]` `"John"` `21`
+- C: `"John"` `["", " is ", " years old"]` `21`
 
 <details><summary><b>Answer</b></summary>
 <p>
@@ -819,16 +819,16 @@ The `continue` statement skips an iteration if a certain condition returns `true
 ###### 28. What's the output?
 
 ```javascript
-String.prototype.giveLydiaPizza = () => {
-  return "Just give Lydia pizza already!";
+String.prototype.giveJohnPizza = () => {
+  return "Just give John pizza already!";
 };
 
-const name = "Lydia";
+const name = "John";
 
-console.log(name.giveLydiaPizza());
+console.log(name.giveJohnPizza());
 ```
 
-- A: `"Just give Lydia pizza already!"`
+- A: `"Just give John pizza already!"`
 - B: `TypeError: not a function`
 - C: `SyntaxError`
 - D: `undefined`
@@ -987,7 +987,7 @@ If we click `p`, we see two logs: `p` and `div`. During event propagation, there
 ###### 33. What's the output?
 
 ```javascript
-const person = { name: "Lydia" };
+const person = { name: "John" };
 
 function sayHi(age) {
   return `${this.name} is ${age}`;
@@ -997,10 +997,10 @@ console.log(sayHi.call(person, 21));
 console.log(sayHi.bind(person, 21));
 ```
 
-- A: `undefined is 21` `Lydia is 21`
+- A: `undefined is 21` `John is 21`
 - B: `function` `function`
-- C: `Lydia is 21` `Lydia is 21`
-- D: `Lydia is 21` `function`
+- C: `John is 21` `John is 21`
+- D: `John is 21` `function`
 
 <details><summary><b>Answer</b></summary>
 <p>
@@ -1284,12 +1284,12 @@ It returns a unique id. This id can be used to clear that interval with the `cle
 ###### 43. What does this return?
 
 ```javascript
-[..."Lydia"];
+[..."John"];
 ```
 
 - A: `["L", "y", "d", "i", "a"]`
-- B: `["Lydia"]`
-- C: `[[], "Lydia"]`
+- B: `["John"]`
+- C: `[[], "John"]`
 - D: `[["L", "y", "d", "i", "a"]]`
 
 <details><summary><b>Answer</b></summary>
@@ -1373,7 +1373,7 @@ When we pass multiple promises to the `Promise.race` method, it resolves/rejects
 ###### 46. What's the output?
 
 ```javascript
-let person = { name: "Lydia" };
+let person = { name: "John" };
 const members = [person];
 person = null;
 
@@ -1383,7 +1383,7 @@ console.log(members);
 - A: `null`
 - B: `[null]`
 - C: `[{}]`
-- D: `[{ name: "Lydia" }]`
+- D: `[{ name: "John" }]`
 
 <details><summary><b>Answer</b></summary>
 <p>
@@ -1413,7 +1413,7 @@ We are only modifying the value of the `person` variable, and not the first elem
 
 ```javascript
 const person = {
-  name: "Lydia",
+  name: "John",
   age: 21,
 };
 
@@ -1422,10 +1422,10 @@ for (const item in person) {
 }
 ```
 
-- A: `{ name: "Lydia" }, { age: 21 }`
+- A: `{ name: "John" }, { age: 21 }`
 - B: `"name", "age"`
-- C: `"Lydia", 21`
-- D: `["name", "Lydia"], ["age", 21]`
+- C: `"John", 21`
+- D: `["name", "John"], ["age", 21]`
 
 <details><summary><b>Answer</b></summary>
 <p>
@@ -1523,7 +1523,7 @@ However, we don’t return a value. When we don’t return a value from the func
 
 ```javascript
 function getInfo(member, year) {
-  member.name = "Lydia";
+  member.name = "John";
   year = "1998";
 }
 
@@ -1535,9 +1535,9 @@ getInfo(person, birthYear);
 console.log(person, birthYear);
 ```
 
-- A: `{ name: "Lydia" }, "1997"`
+- A: `{ name: "John" }, "1997"`
 - B: `{ name: "Sarah" }, "1998"`
-- C: `{ name: "Lydia" }, "1998"`
+- C: `{ name: "John" }, "1998"`
 - D: `{ name: "Sarah" }, "1997"`
 
 <details><summary><b>Answer</b></summary>
@@ -1549,7 +1549,7 @@ Arguments are passed by _value_, unless their value is an object, then they're p
 
 The variable `birthYear` has a reference to the value `"1997"`. The argument `year` also has a reference to the value `"1997"`, but it's not the same value as `birthYear` has a reference to. When we update the value of `year` by setting `year` equal to `"1998"`, we are only updating the value of `year`. `birthYear` is still equal to `"1997"`.
 
-The value of `person` is an object. The argument `member` has a (copied) reference to the _same_ object. When we modify a property of the object `member` has a reference to, the value of `person` will also be modified, since they both have a reference to the same object. `person`'s `name` property is now equal to the value `"Lydia"`
+The value of `person` is an object. The argument `member` has a (copied) reference to the _same_ object. When we modify a property of the object `member` has a reference to, the value of `person` will also be modified, since they both have a reference to the same object. `person`'s `name` property is now equal to the value `"John"`
 
 </p>
 </details>
@@ -1771,7 +1771,7 @@ When we try to increment the value of `myCounter`, it throws an error: `myCounte
 ###### 58. What's the output?
 
 ```javascript
-const name = "Lydia";
+const name = "John";
 age = 21;
 
 console.log(delete name);
@@ -1779,7 +1779,7 @@ console.log(delete age);
 ```
 
 - A: `false`, `true`
-- B: `"Lydia"`, `21`
+- B: `"John"`, `21`
 - C: `true`, `true`
 - D: `undefined`, `undefined`
 
@@ -1842,15 +1842,15 @@ This means that the value of `y` is equal to the first value in the array, which
 ###### 60. What's the output?
 
 ```javascript
-const user = { name: "Lydia", age: 21 };
+const user = { name: "John", age: 21 };
 const admin = { admin: true, ...user };
 
 console.log(admin);
 ```
 
-- A: `{ admin: true, user: { name: "Lydia", age: 21 } }`
-- B: `{ admin: true, name: "Lydia", age: 21 }`
-- C: `{ admin: true, user: ["Lydia", 21] }`
+- A: `{ admin: true, user: { name: "John", age: 21 } }`
+- B: `{ admin: true, name: "John", age: 21 }`
+- C: `{ admin: true, user: ["John", 21] }`
 - D: `{ admin: true }`
 
 <details><summary><b>Answer</b></summary>
@@ -1858,7 +1858,7 @@ console.log(admin);
 
 #### Answer: B
 
-It's possible to combine objects using the spread operator `...`. It lets you create copies of the key/value pairs of one object, and add them to another object. In this case, we create copies of the `user` object, and add them to the `admin` object. The `admin` object now contains the copied key/value pairs, which results in `{ admin: true, name: "Lydia", age: 21 }`.
+It's possible to combine objects using the spread operator `...`. It lets you create copies of the key/value pairs of one object, and add them to another object. In this case, we create copies of the `user` object, and add them to the `admin` object. The `admin` object now contains the copied key/value pairs, which results in `{ admin: true, name: "John", age: 21 }`.
 
 </p>
 </details>
@@ -1868,7 +1868,7 @@ It's possible to combine objects using the spread operator `...`. It lets you cr
 ###### 61. What's the output?
 
 ```javascript
-const person = { name: "Lydia" };
+const person = { name: "John" };
 
 Object.defineProperty(person, "age", { value: 21 });
 
@@ -1876,10 +1876,10 @@ console.log(person);
 console.log(Object.keys(person));
 ```
 
-- A: `{ name: "Lydia", age: 21 }`, `["name", "age"]`
-- B: `{ name: "Lydia", age: 21 }`, `["name"]`
-- C: `{ name: "Lydia"}`, `["name", "age"]`
-- D: `{ name: "Lydia"}`, `["age"]`
+- A: `{ name: "John", age: 21 }`, `["name", "age"]`
+- B: `{ name: "John", age: 21 }`, `["name"]`
+- C: `{ name: "John"}`, `["name", "age"]`
+- D: `{ name: "John"}`, `["age"]`
 
 <details><summary><b>Answer</b></summary>
 <p>
@@ -1899,7 +1899,7 @@ Properties added using the `defineProperty` method are immutable by default. You
 
 ```javascript
 const settings = {
-  username: "lydiahallie",
+  username: "Johnhallie",
   level: 19,
   health: 90,
 };
@@ -1909,9 +1909,9 @@ console.log(data);
 ```
 
 - A: `"{"level":19, "health":90}"`
-- B: `"{"username": "lydiahallie"}"`
+- B: `"{"username": "Johnhallie"}"`
 - C: `"["level", "health"]"`
-- D: `"{"username": "lydiahallie", "level":19, "health":90}"`
+- D: `"{"username": "Johnhallie", "level":19, "health":90}"`
 
 <details><summary><b>Answer</b></summary>
 <p>
@@ -2148,22 +2148,22 @@ Every Symbol is entirely unique. The purpose of the argument passed to the Symbo
 ###### 69. What's the output?
 
 ```javascript
-const name = "Lydia Hallie";
+const name = "John Hallie";
 console.log(name.padStart(13));
 console.log(name.padStart(2));
 ```
 
-- A: `"Lydia Hallie"`, `"Lydia Hallie"`
-- B: `" Lydia Hallie"`, `" Lydia Hallie"` (`"[13x whitespace]Lydia Hallie"`, `"[2x whitespace]Lydia Hallie"`)
-- C: `" Lydia Hallie"`, `"Lydia Hallie"` (`"[1x whitespace]Lydia Hallie"`, `"Lydia Hallie"`)
-- D: `"Lydia Hallie"`, `"Lyd"`,
+- A: `"John Hallie"`, `"John Hallie"`
+- B: `" John Hallie"`, `" John Hallie"` (`"[13x whitespace]John Hallie"`, `"[2x whitespace]John Hallie"`)
+- C: `" John Hallie"`, `"John Hallie"` (`"[1x whitespace]John Hallie"`, `"John Hallie"`)
+- D: `"John Hallie"`, `"Lyd"`,
 
 <details><summary><b>Answer</b></summary>
 <p>
 
 #### Answer: C
 
-With the `padStart` method, we can add padding to the beginning of a string. The value passed to this method is the _total_ length of the string together with the padding. The string `"Lydia Hallie"` has a length of `12`. `name.padStart(13)` inserts 1 space at the start of the string, because 12 + 1 is 13.
+With the `padStart` method, we can add padding to the beginning of a string. The value passed to this method is the _total_ length of the string together with the padding. The string `"John Hallie"` has a length of `12`. `name.padStart(13)` inserts 1 space at the start of the string, because 12 + 1 is 13.
 
 If the argument passed to the `padStart` method is smaller than the length of the array, no padding will be added.
 
@@ -2368,12 +2368,12 @@ Since `shape` is frozen, and since the value of `x` is not an object, we cannot 
 ###### 76. What's the output?
 
 ```javascript
-const { firstName: myName } = { firstName: "Lydia" };
+const { firstName: myName } = { firstName: "John" };
 
 console.log(firstName);
 ```
 
-- A: `"Lydia"`
+- A: `"John"`
 - B: `"myName"`
 - C: `undefined`
 - D: `ReferenceError`
@@ -2386,21 +2386,21 @@ console.log(firstName);
 By using [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax we can unpack values from arrays, or properties from objects, into distinct variables:
 
 ```javascript
-const { firstName } = { firstName: "Lydia" };
+const { firstName } = { firstName: "John" };
 // ES5 version:
-// var firstName = { firstName: 'Lydia' }.firstName;
+// var firstName = { firstName: 'John' }.firstName;
 
-console.log(firstName); // "Lydia"
+console.log(firstName); // "John"
 ```
 
 Also, a property can be unpacked from an object and assigned to a variable with a different name than the object property:
 
 ```javascript
-const { firstName: myName } = { firstName: "Lydia" };
+const { firstName: myName } = { firstName: "John" };
 // ES5 version:
-// var myName = { firstName: 'Lydia' }.firstName;
+// var myName = { firstName: 'John' }.firstName;
 
-console.log(myName); // "Lydia"
+console.log(myName); // "John"
 console.log(firstName); // Uncaught ReferenceError: firstName is not defined
 ```
 
@@ -2409,9 +2409,9 @@ Therefore, `firstName` does not exist as a variable, thus attempting to access i
 **Note:** Be aware of the `global scope` properties:
 
 ```javascript
-const { name: myName } = { name: "Lydia" };
+const { name: myName } = { name: "John" };
 
-console.log(myName); // "lydia"
+console.log(myName); // "John"
 console.log(name); // "" ----- Browser e.g. Chrome
 console.log(name); // ReferenceError: name is not defined  ----- NodeJS
 ```
@@ -2586,9 +2586,9 @@ By default, arguments have the value of `undefined`, unless a value has been pas
 
 In ES6, we can overwrite this default `undefined` value with default parameters. For example:
 
-`function sayHi(name = "Lydia") { ... }`
+`function sayHi(name = "John") { ... }`
 
-In this case, if we didn't pass a value or if we passed `undefined`, `name` would always be equal to the string `Lydia`
+In this case, if we didn't pass a value or if we passed `undefined`, `name` would always be equal to the string `John`
 
 </p>
 </details>
@@ -2638,7 +2638,7 @@ With the `call` method, we can change the object to which the `this` keyword ref
 
 ```javascript
 const person = {
-  name: "Lydia",
+  name: "John",
   age: 21,
 };
 
@@ -2648,9 +2648,9 @@ city = "Amsterdam";
 console.log(person);
 ```
 
-- A: `{ name: "Lydia", age: 21 }`
-- B: `{ name: "Lydia", age: 21, city: "Amsterdam" }`
-- C: `{ name: "Lydia", age: 21, city: undefined }`
+- A: `{ name: "John", age: 21 }`
+- B: `{ name: "John", age: 21, city: "Amsterdam" }`
+- C: `{ name: "John", age: 21, city: undefined }`
 - D: `"Amsterdam"`
 
 <details><summary><b>Answer</b></summary>
@@ -2819,7 +2819,7 @@ If you're trying to set a default parameter's value equal to a parameter that is
 ```javascript
 // module.js
 export default () => "Hello world";
-export const name = "Lydia";
+export const name = "John";
 
 // index.js
 import * as data from "./module";
@@ -2827,9 +2827,9 @@ import * as data from "./module";
 console.log(data);
 ```
 
-- A: `{ default: function default(), name: "Lydia" }`
+- A: `{ default: function default(), name: "John" }`
 - B: `{ default: function default() }`
-- C: `{ default: "Hello world", name: "Lydia" }`
+- C: `{ default: "Hello world", name: "John" }`
 - D: Global object of `module.js`
 
 <details><summary><b>Answer</b></summary>
@@ -2837,7 +2837,7 @@ console.log(data);
 
 #### Answer: A
 
-With the `import * as name` syntax, we import _all exports_ from the `module.js` file into the `index.js` file as a new object called `data` is created. In the `module.js` file, there are two exports: the default export, and a named export. The default export is a function that returns the string `"Hello World"`, and the named export is a variable called `name` which has the value of the string `"Lydia"`.
+With the `import * as name` syntax, we import _all exports_ from the `module.js` file into the `index.js` file as a new object called `data` is created. In the `module.js` file, there are two exports: the default export, and a named export. The default export is a function that returns the string `"Hello World"`, and the named export is a variable called `name` which has the value of the string `"John"`.
 
 The `data` object has a `default` property for the default export, other properties have the names of the named exports and their corresponding values.
 
@@ -2914,15 +2914,15 @@ Then, we try to use the `.push` method on `newList`. Since `newList` is the nume
 ###### 92. What's the output?
 
 ```javascript
-function giveLydiaPizza() {
+function giveJohnPizza() {
   return "Here is pizza!";
 }
 
-const giveLydiaChocolate = () =>
+const giveJohnChocolate = () =>
   "Here's chocolate... now go hit the gym already.";
 
-console.log(giveLydiaPizza.prototype);
-console.log(giveLydiaChocolate.prototype);
+console.log(giveJohnPizza.prototype);
+console.log(giveJohnChocolate.prototype);
 ```
 
 - A: `{ constructor: ...}` `{ constructor: ...}`
@@ -2935,7 +2935,7 @@ console.log(giveLydiaChocolate.prototype);
 
 #### Answer: D
 
-Regular functions, such as the `giveLydiaPizza` function, have a `prototype` property, which is an object (prototype object) with a `constructor` property. Arrow functions however, such as the `giveLydiaChocolate` function, do not have this `prototype` property. `undefined` gets returned when trying to access the `prototype` property using `giveLydiaChocolate.prototype`.
+Regular functions, such as the `giveJohnPizza` function, have a `prototype` property, which is an object (prototype object) with a `constructor` property. Arrow functions however, such as the `giveJohnChocolate` function, do not have this `prototype` property. `undefined` gets returned when trying to access the `prototype` property using `giveJohnChocolate.prototype`.
 
 </p>
 </details>
@@ -2946,7 +2946,7 @@ Regular functions, such as the `giveLydiaPizza` function, have a `prototype` pro
 
 ```javascript
 const person = {
-  name: "Lydia",
+  name: "John",
   age: 21,
 };
 
@@ -2955,8 +2955,8 @@ for (const [x, y] of Object.entries(person)) {
 }
 ```
 
-- A: `name` `Lydia` and `age` `21`
-- B: `["name", "Lydia"]` and `["age", 21]`
+- A: `name` `John` and `age` `21`
+- B: `["name", "John"]` and `["age", 21]`
 - C: `["name", "age"]` and `undefined`
 - D: `Error`
 
@@ -2967,11 +2967,11 @@ for (const [x, y] of Object.entries(person)) {
 
 `Object.entries(person)` returns an array of nested arrays, containing the keys and objects:
 
-`[ [ 'name', 'Lydia' ], [ 'age', 21 ] ]`
+`[ [ 'name', 'John' ], [ 'age', 21 ] ]`
 
 Using the `for-of` loop, we can iterate over each element in the array, the subarrays in this case. We can destructure the subarrays instantly in the for-of loop, using `const [x, y]`. `x` is equal to the first element in the subarray, `y` is equal to the second element in the subarray.
 
-The first subarray is `[ "name", "Lydia" ]`, with `x` equal to `"name"`, and `y` equal to `"Lydia"`, which get logged.
+The first subarray is `[ "name", "John" ]`, with `x` equal to `"name"`, and `y` equal to `"John"`, which get logged.
 The second subarray is `[ "age", 21 ]`, with `x` equal to `"age"`, and `y` equal to `21`, which get logged.
 
 </p>
@@ -3061,7 +3061,7 @@ This means that `a + b` is never reached, since a function stops running after t
 ```javascript
 class Person {
   constructor() {
-    this.name = "Lydia";
+    this.name = "John";
   }
 }
 
@@ -3075,7 +3075,7 @@ const member = new Person();
 console.log(member.name);
 ```
 
-- A: `"Lydia"`
+- A: `"John"`
 - B: `"Sarah"`
 - C: `Error: cannot redeclare Person`
 - D: `SyntaxError`
@@ -3129,16 +3129,16 @@ const getList = ([x, ...y]) => [x, y]
 const getUser = user => { name: user.name, age: user.age }
 
 const list = [1, 2, 3, 4]
-const user = { name: "Lydia", age: 21 }
+const user = { name: "John", age: 21 }
 
 console.log(getList(list))
 console.log(getUser(user))
 ```
 
 - A: `[1, [2, 3, 4]]` and `SyntaxError`
-- B: `[1, [2, 3, 4]]` and `{ name: "Lydia", age: 21 }`
-- C: `[1, 2, 3, 4]` and `{ name: "Lydia", age: 21 }`
-- D: `Error` and `{ name: "Lydia", age: 21 }`
+- B: `[1, [2, 3, 4]]` and `{ name: "John", age: 21 }`
+- C: `[1, 2, 3, 4]` and `{ name: "John", age: 21 }`
+- D: `Error` and `{ name: "John", age: 21 }`
 
 <details><summary><b>Answer</b></summary>
 <p>
@@ -3165,7 +3165,7 @@ The following function would have returned an object:
 ###### 99. What's the output?
 
 ```javascript
-const name = "Lydia";
+const name = "John";
 
 console.log(name());
 ```
@@ -3303,8 +3303,8 @@ This means that it waited for the `myPromise` to resolve with the value `I have 
 const set = new Set();
 
 set.add(1);
-set.add("Lydia");
-set.add({ name: "Lydia" });
+set.add("John");
+set.add({ name: "John" });
 
 for (let item of set) {
   console.log(item + 2);
@@ -3313,8 +3313,8 @@ for (let item of set) {
 
 - A: `3`, `NaN`, `NaN`
 - B: `3`, `7`, `NaN`
-- C: `3`, `Lydia2`, `[object Object]2`
-- D: `"12"`, `Lydia2`, `[object Object]2`
+- C: `3`, `John2`, `[object Object]2`
+- D: `"12"`, `John2`, `[object Object]2`
 
 <details><summary><b>Answer</b></summary>
 <p>
@@ -3325,9 +3325,9 @@ The `+` operator is not only used for adding numerical values, but we can also u
 
 The first one is `1`, which is a numerical value. `1 + 2` returns the number 3.
 
-However, the second one is a string `"Lydia"`. `"Lydia"` is a string and `2` is a number: `2` gets coerced into a string. `"Lydia"` and `"2"` get concatenated, which results in the string `"Lydia2"`.
+However, the second one is a string `"John"`. `"John"` is a string and `2` is a number: `2` gets coerced into a string. `"John"` and `"2"` get concatenated, which results in the string `"John2"`.
 
-`{ name: "Lydia" }` is an object. Neither a number nor an object is a string, so it stringifies both. Whenever we stringify a regular object, it becomes `"[object Object]"`. `"[object Object]"` concatenated with `"2"` becomes `"[object Object]2"`.
+`{ name: "John" }` is an object. Neither a number nor an object is a string, so it stringifies both. Whenever we stringify a regular object, it becomes `"[object Object]"`. `"[object Object]"` concatenated with `"2"` becomes `"[object Object]2"`.
 
 </p>
 </details>
@@ -3370,7 +3370,7 @@ function compareMembers(person1, person2 = person) {
   }
 }
 
-const person = { name: "Lydia" };
+const person = { name: "John" };
 
 compareMembers(person);
 ```
@@ -3548,8 +3548,8 @@ const jsonArray = JSON.stringify([1, 2, 3]); // '[1, 2, 3]'
 JSON.parse(jsonArray); // [1, 2, 3]
 
 // Stringifying an object  into valid JSON, then parsing the JSON string to a JavaScript value:
-const jsonArray = JSON.stringify({ name: "Lydia" }); // '{"name":"Lydia"}'
-JSON.parse(jsonArray); // { name: 'Lydia' }
+const jsonArray = JSON.stringify({ name: "John" }); // '{"name":"John"}'
+JSON.parse(jsonArray); // { name: 'John' }
 ```
 
 </p>
@@ -3560,7 +3560,7 @@ JSON.parse(jsonArray); // { name: 'Lydia' }
 ###### 111. What's the output?
 
 ```javascript
-let name = "Lydia";
+let name = "John";
 
 function getName() {
   console.log(name);
@@ -3570,7 +3570,7 @@ function getName() {
 getName();
 ```
 
-- A: Lydia
+- A: John
 - B: Sarah
 - C: `undefined`
 - D: `ReferenceError`
@@ -3584,16 +3584,16 @@ Each function has its own _execution context_ (or _scope_). The `getName` functi
 
 Variables with the `let` keyword (and `const`) are hoisted, but unlike `var`, don't get <i>initialized</i>. They are not accessible before the line we declare (initialize) them. This is called the "temporal dead zone". When we try to access the variables before they are declared, JavaScript throws a `ReferenceError`.
 
-If we wouldn't have declared the `name` variable within the `getName` function, the javascript engine would've looked down the _scope chain_. The outer scope has a variable called `name` with the value of `Lydia`. In that case, it would've logged `Lydia`.
+If we wouldn't have declared the `name` variable within the `getName` function, the javascript engine would've looked down the _scope chain_. The outer scope has a variable called `name` with the value of `John`. In that case, it would've logged `John`.
 
 ```javascript
-let name = "Lydia";
+let name = "John";
 
 function getName() {
   console.log(name);
 }
 
-getName(); // Lydia
+getName(); // John
 ```
 
 </p>
@@ -3748,7 +3748,7 @@ When adding a key/value pair using the `set` method, the key will be the value o
 
 ```javascript
 const person = {
-  name: "Lydia",
+  name: "John",
   age: 21,
 };
 
@@ -3766,8 +3766,8 @@ console.log(person);
 
 - A: `{name: "Sarah", age: 22}`
 - B: `{name: "Sarah", age: 23}`
-- C: `{name: "Lydia", age: 22}`
-- D: `{name: "Lydia", age: 23}`
+- C: `{name: "John", age: 22}`
+- D: `{name: "John", age: 23}`
 
 <details><summary><b>Answer</b></summary>
 <p>
@@ -3776,9 +3776,9 @@ console.log(person);
 
 Both the `changeAge` and `changeAgeAndName` functions have a default parameter, namely a _newly_ created object `{ ...person }`. This object has copies of all the key/values in the `person` object.
 
-First, we invoke the `changeAge` function and pass the `person` object as its argument. This function increases the value of the `age` property by 1. `person` is now `{ name: "Lydia", age: 22 }`.
+First, we invoke the `changeAge` function and pass the `person` object as its argument. This function increases the value of the `age` property by 1. `person` is now `{ name: "John", age: 22 }`.
 
-Then, we invoke the `changeAgeAndName` function, however we don't pass a parameter. Instead, the value of `x` is equal to a _new_ object: `{ ...person }`. Since it's a new object, it doesn't affect the values of the properties on the `person` object. `person` is still equal to `{ name: "Lydia", age: 22 }`.
+Then, we invoke the `changeAgeAndName` function, however we don't pass a parameter. Instead, the value of `x` is equal to a _new_ object: `{ ...person }`. Since it's a new object, it doesn't affect the values of the properties on the `person` object. `person` is still equal to `{ name: "John", age: 22 }`.
 
 </p>
 </details>
@@ -3840,7 +3840,7 @@ With the `+=` operator, we're incrementing the value of `num` by `1`. `num` had 
 
 ```javascript
 const person = {
-  firstName: "Lydia",
+  firstName: "John",
   lastName: "Hallie",
   pet: {
     name: "Mara",
@@ -3858,8 +3858,8 @@ console.log(member.getLastName?.());
 ```
 
 - A: `undefined` `undefined` `undefined` `undefined`
-- B: `Mara` `undefined` `Lydia Hallie` `ReferenceError`
-- C: `Mara` `null` `Lydia Hallie` `null`
+- B: `Mara` `undefined` `John Hallie` `ReferenceError`
+- C: `Mara` `null` `John Hallie` `null`
 - D: `null` `ReferenceError` `null` `ReferenceError`
 
 <details><summary><b>Answer</b></summary>
@@ -3871,7 +3871,7 @@ With the optional chaining operator `?.`, we no longer have to explicitly check 
 
 `person.pet?.name`: `person` has a property named `pet`: `person.pet` is not nullish. It has a property called `name`, and returns `Mara`.
 `person.pet?.family?.name`: `person` has a property named `pet`: `person.pet` is not nullish. `pet` does _not_ have a property called `family`, `person.pet.family` is nullish. The expression returns `undefined`.
-`person.getFullName?.()`: `person` has a property named `getFullName`: `person.getFullName()` is not nullish and can get invoked, which returns `Lydia Hallie`.
+`person.getFullName?.()`: `person` has a property named `getFullName`: `person.getFullName()` is not nullish and can get invoked, which returns `John Hallie`.
 `member.getLastName?.()`: variable `member` is non-existent therefore a `ReferenceError` gets thrown!
 
 </p>
@@ -3941,7 +3941,7 @@ The `language` method is a `setter`. Setters don't hold an actual value, their p
 ###### 122. What's the output?
 
 ```javascript
-const name = "Lydia Hallie";
+const name = "John Hallie";
 
 console.log(!typeof name === "object");
 console.log(!typeof name === "string");
@@ -4121,7 +4121,7 @@ By destructuring objects, we can unpack values from the right-hand object, and a
 ###### 128. What's the output?
 
 ```javascript
-const name = "Lydia Hallie";
+const name = "John Hallie";
 const age = 21;
 
 console.log(Number.isNaN(name));
@@ -4157,7 +4157,7 @@ const randomValue = 21;
 
 function getInfo() {
   console.log(typeof randomValue);
-  const randomValue = "Lydia Hallie";
+  const randomValue = "John Hallie";
 }
 
 getInfo();
@@ -4318,7 +4318,7 @@ funcTwo();
 
 #### Answer: C
 
-First, we invoke `funcOne`. On the first line of `funcOne`, we call the _asynchronous_ `setTimeout` function, from which the callback is sent to the Web API. (see my article on the event loop <a href="https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif">here</a>.)
+First, we invoke `funcOne`. On the first line of `funcOne`, we call the _asynchronous_ `setTimeout` function, from which the callback is sent to the Web API. (see my article on the event loop <a href="https://dev.to/Johnhallie/javascript-visualized-event-loop-3dif">here</a>.)
 
 Then we call the `myPromise` promise, which is an _asynchronous_ operation. Pay attention, that now only the first then clause was added to the microtask queue.
 
@@ -4363,7 +4363,7 @@ With the asterisk `*`, we import all exported values from that file, both defaul
 
 ```javascript
 // info.js
-export const name = "Lydia";
+export const name = "John";
 export const age = 21;
 export default "I love JavaScript";
 
@@ -4377,7 +4377,7 @@ The following would get logged:
 ```javascript
 {
   default: "I love JavaScript",
-  name: "Lydia",
+  name: "John",
   age: 21
 }
 ```
@@ -4405,7 +4405,7 @@ const handler = {
 
 const person = new Proxy({}, handler);
 
-person.name = "Lydia";
+person.name = "John";
 person.name;
 ```
 
@@ -4423,7 +4423,7 @@ With a Proxy object, we can add custom behavior to an object that we pass to it 
 
 The first argument is an empty object `{}`, which is the value of `person`. To this object, the custom behavior specified in the `handler` object gets added. If we add a property to the `person` object, `set` will get invoked. If we access a property on the `person` object, `get` gets invoked.
 
-First, we added a new property `name` to the proxy object (`person.name = "Lydia"`). `set` gets invoked, and logs `"Added a new property!"`.
+First, we added a new property `name` to the proxy object (`person.name = "John"`). `set` gets invoked, and logs `"Added a new property!"`.
 
 Then, we access a property value on the proxy object, and the `get` property on the handler object is invoked. `"Accessed a property!"` gets logged.
 
@@ -4435,7 +4435,7 @@ Then, we access a property value on the proxy object, and the `get` property on 
 ###### 136. Which of the following will modify the `person` object?
 
 ```javascript
-const person = { name: "Lydia Hallie" };
+const person = { name: "John Hallie" };
 
 Object.seal(person);
 ```
@@ -4463,7 +4463,7 @@ However, you can still modify the value of existing properties.
 
 ```javascript
 const person = {
-  name: "Lydia Hallie",
+  name: "John Hallie",
   address: {
     street: "100 Main St",
   },
@@ -4609,7 +4609,7 @@ If we would've written `yield`, `return yield`, or `return`, the entire generato
 
 ```javascript
 const person = {
-  name: "Lydia Hallie",
+  name: "John Hallie",
   hobbies: ["coding"],
 };
 
@@ -4714,15 +4714,15 @@ The `const` keyword simply means we cannot _redeclare_ the value of that variabl
 
 ---
 
-###### 144. What do we need to add to the `person` object to get `["Lydia Hallie", 21]` as the output of `[...person]`?
+###### 144. What do we need to add to the `person` object to get `["John Hallie", 21]` as the output of `[...person]`?
 
 ```javascript
 const person = {
-  name: "Lydia Hallie",
+  name: "John Hallie",
   age: 21
 }
 
-[...person] // ["Lydia Hallie", 21]
+[...person] // ["John Hallie", 21]
 ```
 
 - A: Nothing, object are iterable by default
@@ -4735,7 +4735,7 @@ const person = {
 
 #### Answer: C
 
-Objects aren't iterable by default. An iterable is an iterable if the iterator protocol is present. We can add this manually by adding the iterator symbol `[Symbol.iterator]`, which has to return a generator object, for example by making it a generator function `*[Symbol.iterator]() {}`. This generator function has to yield the `Object.values` of the `person` object if we want it to return the array `["Lydia Hallie", 21]`: `yield* Object.values(this)`.
+Objects aren't iterable by default. An iterable is an iterable if the iterator protocol is present. We can add this manually by adding the iterator symbol `[Symbol.iterator]`, which has to return a generator object, for example by making it a generator function `*[Symbol.iterator]() {}`. This generator function has to yield the `Object.values` of the `person` object if we want it to return the array `["John Hallie", 21]`: `yield* Object.values(this)`.
 
 </p>
 </details>
@@ -5019,11 +5019,11 @@ The `Promise.all` method runs the passed promises in parallel. If one promise fa
 
 ---
 
-###### 153. What should the value of `method` be to log `{ name: "Lydia", age: 22 }`?
+###### 153. What should the value of `method` be to log `{ name: "John", age: 22 }`?
 
 ```javascript
 const keys = ["name", "age"];
-const values = ["Lydia", 22];
+const values = ["John", 22];
 
 const method =
   /* ?? */
@@ -5031,7 +5031,7 @@ const method =
     keys.map((_, i) => {
       return [keys[i], values[i]];
     })
-  ); // { name: "Lydia", age: 22 }
+  ); // { name: "John", age: 22 }
 ```
 
 - A: `entries`
@@ -5046,7 +5046,7 @@ const method =
 
 The `fromEntries` method turns a 2d array into an object. The first element in each subarray will be the key, and the second element in each subarray will be the value. In this case, we’re mapping over the `keys` array, which returns an array that the first element is the item on the key array on the current index, and the second element is the item of the values array on the current index.
 
-This creates an array of subarrays containing the correct keys and values, which results in `{ name: "Lydia", age: 22 }`
+This creates an array of subarrays containing the correct keys and values, which results in `{ name: "John", age: 22 }`
 
 </p>
 </details>
@@ -5090,7 +5090,7 @@ The default value of `address` is an empty object `{}`. When we set the variable
 ###### 155. What's the output?
 
 ```javascript
-let randomValue = { name: "Lydia" };
+let randomValue = { name: "John" };
 randomValue = 23;
 
 if (!typeof randomValue === "string") {
